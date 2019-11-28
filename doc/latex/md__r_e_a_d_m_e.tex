@@ -1,0 +1,41 @@
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{$<$span id=\char`\"{}工程概述\char`\"{}$>$工程概述$<$/span$>$}\label{md__r_e_a_d_m_e_autotoc_md1}
+入口页面为\+P\+S\+Browser\+Controller，点击按钮打开\+P\+S\+Painting\+Size\+Controller选取画布尺寸。 获取返回尺寸创建画布并在页面\+P\+S\+Canvas\+Controller打开 P\+S\+Canvas\+Controller 有上下左右四处操作，上部为计时和设置等 左部操作颜色、大小。右部为图层操作 下部为不刷设置、图片导入、橡皮等。 画笔调整页面为\+P\+S\+Brush\+Controller，画笔选择为\+P\+S\+Brushes\+Controller 左部颜色滑块支持点击和拖动打开 点击弹出颜色列表，滑动弹出\+P\+S\+Color\+Picker\+Controller\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{$<$span id=\char`\"{}总体流程\char`\"{}$>$总体流程$<$/span$>$}\label{md__r_e_a_d_m_e_autotoc_md2}
+画图的总体流程如下：
+\begin{DoxyItemize}
+\item P\+S\+Browser\+Controller点击创建
+\item P\+S\+Painting\+Size\+Controller选取画布尺寸
+\item P\+S\+Canvas\+Controller画布画画页面，使用大小、\+Alpha调整画笔画画、图层、橡皮等完成创作
+\item P\+S\+Canvas\+Controller右上角设置点击保存到本地相册图片
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{$<$span id=\char`\"{}主要第三方库\char`\"{}$>$主要第三方库$<$/span$>$}\label{md__r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyItemize}
+\item opengles 图层渲染效果
+\item I\+F\+M\+Menu 弹出悬浮菜单
+\item Z\+F\+Popup\+Menu 弹出横向悬浮菜单（swift语言）
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{工程结构说明}\label{md__r_e_a_d_m_e_autotoc_md4}
+源码主要分成三个 package controllers、managers、view
+\begin{DoxyItemize}
+\item controllers：所有页面
+\item managers：图层、文件操作管理。
+\item view：自定义view
+\end{DoxyItemize}
+
+下面具体介绍 video\+Edit 包下的子包结构：
+\begin{DoxyItemize}
+\item 一级目录：\+P\+S\+App\+Delegate
+\item controllers：控制器。
+\item Document Updates：数据传递。
+\item Serialization：文件缓存
+\item Managers\+: 操作图层等工具。
+\item Model：数据模型
+\item view：自定义view。
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{重点类说明}\label{md__r_e_a_d_m_e_autotoc_md5}
+
+\begin{DoxyItemize}
+\item P\+S\+Canvas\+Controller \+: 画布页面、左右弹出菜单在显示坐标之外，关闭页面的时候可以隐藏掉。
+\item P\+S\+Bar\+Slider\+Vertical：画笔大小滑块。
+\item Color\+List\+Choose\+View\+: 颜色选择列表页面。
+\item Right\+Layer\+List\+View\+:图层操作\+View
+\item P\+S\+Alpha\+Slider\+Vertical Alpha滑块
+\item P\+S\+Active\+State 画布中所有状态、颜色等 
+\end{DoxyItemize}
